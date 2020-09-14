@@ -50,15 +50,15 @@ export class ForecastComponent implements OnInit {
         this.weather = data;
         for(let i=this.weather.list.length; i>=0; i=i-8) {
           for(let j = 8; j<=i; j=j+8) {
-            if (this.weather.list[j-8].main.temp > this.weather.list[j]) {
-              let delta = this.weather.list[j-8].main;
-              this.weather.list[j-8].main = this.weather.list[j].main;
-              this.weather.list[j].main = delta;
+            if (this.weather.list[j-8].main.temp > this.weather.list[j].main.temp) {
+              let delta = this.weather.list[j-8].main.temp;
+              this.weather.list[j-8].main.temp = this.weather.list[j].main.temp;
+              this.weather.list[j].main.temp = delta;
 
             }
           }
         }
-        for(let i=0;i<this.weather.list.length;i=i+8) {
+        for(let i=0;i<this.weather.list.length;i=i+1) {
           let forecastWeather2 = new StateSort(
             this.weather.list[i].main.temp);
           this.state.push(forecastWeather2);
