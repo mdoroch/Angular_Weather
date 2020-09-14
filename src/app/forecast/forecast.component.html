@@ -1,0 +1,26 @@
+<div>
+  <div>{{error}}</div>
+  <div class="input-group">
+    <input type="text" #userInput placeholder="Введите название города">
+    <div>
+      <button class="btn"  (click)="getCity(userInput.value)">
+<!--              (click)="getCity(userInput.value)"-->
+      Поиск</button>
+      <button class="btn" (click)="getCitySort(userInput.value)">Поиск и сортировка</button>
+    </div>
+    <div>погода в {{weather.city.name}}</div>
+<!--    <div>Температура: {{ weather.list[0].main.temp}}, {{weather.list[8].main.temp}}, {{weather.list[16].main.temp}}, {{weather.list[24].main.temp}}, {{weather.list[32].main.temp}}</div>-->
+    <div>Температура:
+      <div>Сегодня: {{this.state[0].temp}}</div>
+      <div>Завтра: {{this.state[1].temp}}</div>
+      <div> Послезавтра: {{this.state[2].temp}}</div>
+      <div> Завтра завтра завтра: {{this.state[3].temp}}</div>
+      <div> Завтра завтра завтра завтра: {{this.state[4].temp}}</div>
+
+
+  </div>
+
+
+</div>
+<!--//weather.name //weather.city.name-->
+<!--//wether.main.temp  //weather.list.main.temp-->
